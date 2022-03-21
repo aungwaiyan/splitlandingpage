@@ -1,0 +1,130 @@
+:root{
+    --hover-width:75%;
+    --other-width:25%;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    margin:0;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    height: 100%;
+}
+
+.split{
+    width: 50%;
+    height: 100%;
+
+    position: relative;
+
+    
+}
+
+.split.left{
+    background-image: url(../img/annie-spratt-QckxruozjRg-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position:absolute;
+    left:0;
+
+    transition: all 1s;
+}
+
+.split.right{
+    background-image: url(../img/campaign-creators-gMsnXqILjp4-unsplash.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    position:absolute;
+    right:0;
+
+    transition: all 1s;
+}
+
+h3{
+    font-size: 3rem;
+    color:royalblue;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    position:absolute;
+    top:25%;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.btn{
+    font-family: inherit;
+    background-color: royalblue;
+    color:#fff;
+    font-size: 1.5rem;
+    white-space:nowrap;
+    padding:20px 60px;
+    border:none;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+
+    transform: translate(-50%,-50%);
+
+    overflow:hidden;
+}
+
+.circle{
+    width:100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:myani 1s ease-out;
+    
+}
+
+@keyframes myani{
+    to{
+        transform:translate(-50%,-50%) scale(3);
+        opacity:0;
+    }
+}
+
+.hover-left .left{
+    width:var(--hover-width);
+    transition:all 1s;
+}
+
+.hover-left .right{
+    width:var(--other-width);
+    transition:all 1s;
+}
+
+.hover-right .left{
+    width:var(--other-width);
+    transition:all 1s;
+}
+
+.hover-right .right{
+    width:var(--hover-width);
+    transition:all 1s;
+}
+
